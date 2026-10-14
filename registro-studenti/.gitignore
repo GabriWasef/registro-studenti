@@ -1,0 +1,12 @@
+# Dipendenze e build
+node_modules/
+dist/
+out-tsc/
+.angular/
+
+# Editor / sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+npm-debug.log
