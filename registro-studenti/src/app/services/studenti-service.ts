@@ -27,6 +27,10 @@ export class StudentiService {
     return nuovo;
   }
 
+  aggiorna(modificato: Studente): void {
+    this.dati.update(lista => lista.map(s => (s.id === modificato.id ? modificato : s)));
+  }
+
   rimuovi(id: number): void {
     this.dati.update(lista => lista.filter(s => s.id !== id));
   }
