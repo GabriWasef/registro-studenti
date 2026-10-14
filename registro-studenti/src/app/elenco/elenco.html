@@ -7,6 +7,12 @@
   <div class="col-auto">
     <input id="filtro" class="form-control" [(ngModel)]="filtroClasse" placeholder="es. 4B">
   </div>
+  <div class="col-auto ms-md-3">
+    <div class="btn-group" role="group" aria-label="Ordinamento">
+      <button type="button" class="btn btn-outline-secondary" [class.active]="ordine() === 'nome'" (click)="ordinaPer('nome')">Per nome</button>
+      <button type="button" class="btn btn-outline-secondary" [class.active]="ordine() === 'media'" (click)="ordinaPer('media')">Per media</button>
+    </div>
+  </div>
 </div>
 
 @if (filtrati().length === 0) {
@@ -23,7 +29,7 @@
       <tr><th>Id</th><th>Nome</th><th>Classe</th><th>Media</th><th></th></tr>
     </thead>
     <tbody>
-      @for (s of filtrati(); track s.id) {
+      @for (s of visibili(); track s.id) {
         <tr>
           <td>{{ s.id }}</td>
           <td>{{ s.nome }}</td>
